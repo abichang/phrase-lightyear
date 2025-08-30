@@ -1,0 +1,32 @@
+name: Deploy via npm run deploy
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write # Needed to push to gh-pages branch
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm install
+
+      # The 'predeploy' script in package.json will automatically run 'npm run build'.
+      # The 'deploy' script will push the 'dist' directory to the 'gh-pages' branch.
+      - name: Deploy to GitHub Pages
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          npm run deploy
