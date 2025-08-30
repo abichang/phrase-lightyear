@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 40 14% 99%; /* #FFFDF7 */
+    --foreground: 285 11% 31%; /* #4C3A51 */
+
+    --card: 40 14% 99%; /* #FFFDF7 */
+    --card-foreground: 285 11% 31%; /* #4C3A51 */
+
+    --popover: 40 14% 99%;
+    --popover-foreground: 285 11% 31%;
+
+    --primary: 285 11% 31%; /* #4C3A51 */
+    --primary-foreground: 40 14% 99%;
+
+    --secondary: 32 21% 83%; /* #D8CFC4 */
+    --secondary-foreground: 285 11% 31%;
+
+    --muted: 32 21% 83%;
+    --muted-foreground: 285 11% 31%;
+
+    --accent: 38 89% 61%; /* #F4B942 */
+    --accent-foreground: 285 11% 31%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 32 21% 83%;
+    --input: 32 21% 83%;
+    --ring: 285 11% 31%;
+
+    --radius: 0.75rem; /* rounded-xl */
+  }
+
+  .dark {
+    /* Keeping dark mode same as light for this project's aesthetic */
+    --background: 40 14% 99%;
+    --foreground: 285 11% 31%;
+
+    --card: 40 14% 99%;
+    --card-foreground: 285 11% 31%;
+
+    --popover: 40 14% 99%;
+    --popover-foreground: 285 11% 31%;
+
+    --primary: 285 11% 31%;
+    --primary-foreground: 40 14% 99%;
+
+    --secondary: 32 21% 83%;
+    --secondary-foreground: 285 11% 31%;
+
+    --muted: 32 21% 83%;
+    --muted-foreground: 285 11% 31%;
+
+    --accent: 38 89% 61%;
+    --accent-foreground: 285 11% 31%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 32 21% 83%;
+    --input: 32 21% 83%;
+    --ring: 285 11% 31%;
+  }
+}
+
+@layer base {
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Merriweather', serif;
+  }
+}
